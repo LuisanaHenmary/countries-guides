@@ -1,1 +1,26 @@
-<p>home works!</p>
+<app-search-bar (search)="onSearch($event)" ></app-search-bar>
+
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let country of pagedCountries" >
+    <app-country-card [country]="country" ></app-country-card>
+  </div>
+</div>
+<nav>
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <button class="page-link" (click)="goToPage(currentPage - 1)"><i class="bi bi-caret-left-fill"></i></button>
+    </li>
+
+    <li
+      class="page-item"
+      *ngFor="let page of [].constructor(totalPages); let i = index"
+      [class.active]="currentPage === i + 1"
+    >
+      <a class="page-link" href="#" (click)="goToPage(i + 1)">{{ i + 1 }}</a>
+    </li>
+
+    <li class="page-item" [class.disabled]="currentPage === totalPages">
+      <button class="page-link" (click)="goToPage(currentPage + 1)"><i class="bi bi-caret-right-fill"></i></button>
+    </li>
+  </ul>
+</nav>
