@@ -1,1 +1,10 @@
-<p>country-card works!</p>
+<div class="card h-100 shadow-sm">
+    <img [src]="country.flags.svg" class="card-img-top" [alt]="country.name.common">
+    <div class="card-body">
+        <h5 class="card-title">{{ country.name.common }}</h5>
+        <p class="card-text">
+          Region: {{ country.region }}<br>
+          Population: {{ country.population }}
+        </p>
+      </div>
+</div>

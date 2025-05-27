@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Country } from '../../models/country.model';
 
 @Component({
   selector: 'app-country-card',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './country-card.component.css'
 })
 export class CountryCardComponent {
-
+  @Input() country!: Country;
 }
