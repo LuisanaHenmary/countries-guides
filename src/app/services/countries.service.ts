@@ -14,4 +14,12 @@ export class CountriesService {
   getAllCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.apiUrl}/all`);
   }
+
+  searchCountriesByName(name: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/name/${name}`);
+  }
+
+  getCountryByCode(code: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${this.apiUrl}/alpha/${code}`);
+  }
 }
