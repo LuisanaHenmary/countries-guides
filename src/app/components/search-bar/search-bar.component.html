@@ -1,6 +1,9 @@
-<input
+<div class="me-4">
+  <input
   type="text"
-  class="form-control mb-3"
+  class="form-control"
   placeholder="Search country by name"
   (input)="onSearch($event)"
-/>
+  [disabled]="isDisable"
+  />
+</div>

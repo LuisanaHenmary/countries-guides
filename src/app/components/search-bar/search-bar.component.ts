@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,6 +10,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class SearchBarComponent {
 
   @Output() search = new EventEmitter<string>();
+  @Input() isDisable = false
 
   onSearch(value: any) {
     this.search.emit(value);
