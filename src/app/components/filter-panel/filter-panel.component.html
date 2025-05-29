@@ -1,1 +1,4 @@
-<p>filter-panel works!</p>
+<select class="form-select" (change)="onSelect($event)" [disabled]="isDisable">
+  <option value="">All regions</option>
+  <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+</select>
