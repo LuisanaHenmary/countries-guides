@@ -1,1 +1,26 @@
-<p>country-detail works!</p>
+<div *ngIf="loading" class="text-center my-5">
+  <div class="spinner-border" role="status"></div>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">
+  The country could not be loaded. Please check the URL.
+</div>
+
+<div *ngIf="country" class="container my-5">
+  <h2>{{ country.name.common }}</h2>
+  <img [src]="country.flags.svg" alt="Bandera" class="img-fluid my-3" style="max-width: 300px;">
+
+  <ul class="list-group">
+
+    <li class="list-group-item"><strong>Capital:</strong> {{ country.capital ? (country.capital | json) : 'N/A' }}</li>
+    <li class="list-group-item"><strong>Region:</strong> {{ country.region }}</li>
+    <li class="list-group-item"><strong>Subregion:</strong> {{ country.subregion }}</li>
+    <li class="list-group-item"><strong>Population:</strong> {{ country.population | number }}</li>
+    <li class="list-group-item"><strong>Area:</strong> {{ country.area | number }} km²</li>
+    <li class="list-group-item"><strong>Languages:</strong>
+      {{ country.languages ? (country.languages | json) : 'N/A' }}
+    </li>
+  </ul>
+
+  <a [routerLink]="['/']" class="btn btn-outline-primary mt-4">← Volver al listado</a>
+</div>
