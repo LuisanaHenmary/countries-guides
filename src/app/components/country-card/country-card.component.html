@@ -7,4 +7,9 @@
           Population: {{ country.population }}
         </p>
       </div>
+      <div class="card-footer">
+        <a [routerLink]="['country', country.ccn3]" class="btn btn-primary">
+          More details
+        </a>
+      </div>
 </div>
