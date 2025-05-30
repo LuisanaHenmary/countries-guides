@@ -9,7 +9,7 @@ export interface Country {
             };
         };
     };
-    cca3: string;
+    ccn3: string;
     flags: {
         png: string;
         svg: string;
