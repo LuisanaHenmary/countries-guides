@@ -16,7 +16,6 @@
     <li class="list-group-item"><strong>Region:</strong> {{ country.region }}</li>
     <li class="list-group-item"><strong>Subregion:</strong> {{ country.subregion }}</li>
     <li class="list-group-item"><strong>Population:</strong> {{ country.population | number }}</li>
-    <li class="list-group-item"><strong>Area:</strong> {{ country.area | number }} km²</li>
     <li class="list-group-item"><strong>Languages:</strong>
       {{ country.languages ? (country.languages | json) : 'N/A' }}
     </li>
