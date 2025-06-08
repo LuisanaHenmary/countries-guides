@@ -19,8 +19,6 @@ export interface Country {
     subregion?: string;
     capital?: string[];
     population: number;
-    area?: number;
-    borders?: string[];
     languages?: {
         [key: string]: string;
     };
